@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+         @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap");
+         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+         * {
+         margin: 0px;
+         padding: 0px;
+         box-sizing: border-box;
+         }
+         #body {
+         margin: auto;
+         }
+         .material-icons {
+         vertical-align: middle;
+         }
+         .main-nav {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         background-color: aqua;
+         width: 100%;
+         }
+         .main-nav-item {
+         margin: auto 30px;
+         padding: 10px;
+         font-family: "Oxygen", sans-serif;
+         font-size: medium;
+         border-bottom: 2px solid aqua;
+         }
+         .main-nav-item:hover {
+         box-sizing: border-box;
+         border-bottom: 2px solid black;
+         cursor: pointer;
+         }
+         .main {
+         width: 600px;
+         height: 600px;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         margin: auto;
+         }
+
+         .stats {
+         position: relative;
+         }
+         .stats-box {
+         margin: auto;
+         width: 50vw;
+         height: 50vh;
+
+         position: absolute;
+         top: 10%;
+         left: 25%;
+         font-weight: bolder;
+         font-family: "Montserrat", sans-serif;
+         overflow-y: scroll;
+         }
+         .stats-list {
+         margin-top: 0px;
+         }
+         .inside-stats {
+         position: absolute;
+         top: 70px;
+         width: 200px;
+         left: -15px;
+         background-color:aqua;
+         border-radius:0px 0px  20px 20px;
+         border: 2px solid aquamarine;
+         z-index:10;
+         }
+         .inside-stats ul li {
+         list-style: none;
+         text-align: center;
+         padding: 10px;
+         }
+
+         .inside-stats ul li :hover {
+         background-color: white;
+         cursor: pointer;
+         color: blue;
+         }
+         input
+         {
+         font-size: 20px;
+         }
+         a
+         {
+         font-family: 'Open Sans', sans-serif;
+         text-decoration: none;
+         background-color: azure;
+         color: black;
+         border: 2px solid aquamarine;
+         padding:8px;
+         border-radius:10px;
+         font-size:14px;
+         padding: 10px;
+         font-weight: bolder;
+         vertical-align: middle;
+         display: inline-block;
+         }
+         .table
+         {
+         position: absolute;
+         width: 600px;
+         height: 600px;
+         overflow-y: scroll;
+         border: 2px solid black;
+         top: 20vh;
+         left: 30vw;
+         z-index:-20;
+         }
+         <!--           a-->
+         <!--           {-->
+         <!--              text-decoration: none;-->
+         <!--              background-color: azure;-->
+         <!--              color: aqua;-->
+         <!--              border: 2px solid aquamarine;-->
+         <!--           }-->
+         table
+         {
+         width: 100%;
+         height: 100%;
+         font-family: 'Times New Roman', Times, serif;
+         }
+         td
+         {
+         text-align:center;
+         cursor: pointer;
+         background-color: aquamarine;
+         }
+         td:hover
+         {
+         background-color:aqua;
+         }
+         th
+         {
+         background-color: aqua;
+         }
+         .search
+         {
+         position:relative;
+         padding: 10px 0px 0px 10px;
+         font-weight: bolder;
+         border:none;
+         vertical-align: middle;
+         }
+         input[type="search"]
+         {
+         text-decoration: none;
+         background-color: azure;
+         color: black;
+         border: 2px solid aquamarine;
+         padding:8px;
+         border-radius:10px;
+         font-size:14px;
+         padding: 10px;
+         font-weight: bolder;
+         vertical-align: middle;
+         display: inline-block;
+         }
+         .search:hover
+         {
+         border:none;
+         }
+         .s-icon
+         {
+         position:absolute;
+         right: 0px;
+         top:20px;
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="main-nav">
+         <div class="schedule main-nav-item">
+            <a href="schedule">   <i class="material-icons">calendar_view_day</i>schedule</a>
+         </div>
+         <div class="stats main-nav-item">
+            <a href="#" onclick='show_more_menu()'>   <i class="material-icons">sports_cricket</i> Tournment Stats</a>
+            <div class="inside-stats" style="display:none">
+               <ul>
+                  <li>
+                     <a href="/runs">Runs</a>
+                  </li>
+                  <li>
+                     <a href="/wickets">Wickets</a>
+                  </li>
+                  <li>
+                     <a href="/avg">Average</a>
+                  </li>
+                  <li>
+                     <a href="/hig_score">Higest Score</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="team-stat main-nav-item"  >
+            <a href="/points_table">  <i class="material-icons">format_list_numbered_rtl</i>Points Table</a>
+         </div>
+         <div class="search main-nav-item"  >
+            <div class="search_in">
+               <form method="post" action="/search">
+                  <input type="search" name="name" placeholder="search" >
+               </form>
+               <div class="s-icon">
+                  <span class="material-icons">
+                  search
+                  </span>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <script>
+       let hide=1;
+       console.log("hi")
+       var el = document.querySelector(".inside-stats");
+         function show_more_menu()
+         {
+         if(hide==1)
+         {
+        el.style.display="block";
+         hide=0;
+
+         }
+         else if(hide==0)
+         {
+        el.style.display="none";
+        hide=1;
+         }
+         console.log(hide);
+
+
+         }
+
+      </script>
+   </body>
+</html>

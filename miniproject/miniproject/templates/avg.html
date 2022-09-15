@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>average</title>
+<!--    <link rel="stylesheet" href="static/common.css">-->
+</head>
+<body>
+{% include "nav.html" %}
+      <div class="table">
+
+<table>
+    {% block cntent %}
+    <tr>
+        <th>
+            Player
+        </th>
+        <th>
+           Best_Avg
+        </th>
+    </tr>
+    {% for i in avg%}
+     <tr>
+        <td>
+            {{i[0]}}
+        </td>
+        <td>
+           {{i[1]}}
+        </td>
+    </tr>
+    {% endfor%}
+    {% endblock %}
+</table>
+      </div>
+</body>
+</html>

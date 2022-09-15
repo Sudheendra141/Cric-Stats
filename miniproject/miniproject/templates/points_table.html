@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>points_table</title>
+       <style>
+                 .table
+           {
+              position: absolute;
+              width: 600px;
+              height: 600px;
+              overflow-y: scroll;
+              border: 2px solid black;
+              top: 20vh;
+              left: 30vw;
+
+
+           }
+            table
+           {
+              width: 100%;
+              height: 100%;
+              font-family: 'Times New Roman', Times, serif;
+
+           }
+           td
+           {
+            text-align:center;
+            cursor: pointer;
+            background-color: aquamarine;
+           }
+            td:hover
+           {
+            background-color:aqua;
+           }
+           th
+           {
+              background-color: aqua;
+           }
+       </style>
+   </head>
+   <body>
+    {% include "nav.html" %}
+    <div class="table">
+      {% block content%}
+      <table>
+         <tr>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Lost</th>
+            <th>Points</th>
+         </tr>
+         {% for i in points_table %}
+         <tr>
+            <td>
+               {{i[0]}}
+            </td>
+            <td>
+               {{i[1]}}
+            </td>
+            <td>
+               {{i[2]}}
+            </td>
+            <td>
+               {{i[3]}}
+            </td>
+            <td>
+               {{i[4]}}
+            </td>
+         </tr>
+         {% endfor %}
+      </table>
+      {% endblock %}
+    </div>
+   </body>
+</html>

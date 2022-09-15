@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+            <link rel="stylesheet" href="static/common.css">
+
+</head>
+<body>
+{% include "nav.html" %}
+
+      <div class="table">
+
+<table>
+
+
+
+{% block content %}
+
+    {% for i  in search %}
+    <tr><th>Name</th><td>{{i[0]}}</td></tr>
+    <tr><th>Runs</th><td>{{i[1]}}</td></tr>
+    <tr><th>Higest</th><td>{{i[2]}}</td></tr>
+    <tr><th>50's</th><td>{{i[3]}}</td></tr>
+    <tr><th>100's</th><td>{{i[4]}}</td></tr>
+    <tr><th>Batting Avg</th><td>{{i[5]}}</td></tr>
+     <tr><th>Strike Rate</th><td>{{i[6]}}</td></tr>
+    <tr><th>overs bowled</th><td>{{i[7]}}</td></tr>
+    <tr><th>Wickets</th><td>{{i[8]}}</td></tr>
+    <tr><th>Maiden's</th><td>{{i[9]}}</td></tr>
+    <tr><th>Economy</th><td>{{i[10]}}</td></tr>
+    <tr><th>Best</th><td>{{i[11]}}</td></tr>
+    <tr><th>Points</th><td>{{i[12]}}</td></tr>
+
+
+    {% endfor %}
+        {% endblock %}
+
+
+
+</table>
+      </div>
+</body>
+</html>

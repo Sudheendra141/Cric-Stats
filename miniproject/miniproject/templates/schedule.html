@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>schedule</title>
+<!--    <link rel="stylesheet" href="/static/schedule.css">-->
+       <link rel="stylesheet" href="static/common.css">
+    <style>
+
+table {
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+tr
+{
+height:50px;
+}
+
+    </style>
+
+</head>
+<body>
+ {% include "nav.html" %}
+{% block content %}
+      <div class="schedule-box">
+         <div class="schedule-list">
+            <table>
+               <tr>
+                  <th>Team-1 </th>
+                  <th>Team-2</th>
+                  <th>Date & time</th>
+                  <th>Venue</th>
+               </tr>
+                {% for i in n %}
+               <tr>
+                  <td> {{i[0]}} </td>
+                  <td>{{i[1]}} </td>
+                  <td>{{i[2]}}</th>
+                  <td>{{i[3]}}</td>
+                   {% endfor %}
+
+               </tr>
+            </table>
+         </div>
+      </div>
+{% endblock %}
+</body>
+</html>
+
+
+
+
+

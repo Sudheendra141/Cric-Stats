@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Most Runs</title>
+<!--      <link rel="stylesheet" href="static/common.css">-->
+   </head>
+   <body>
+      {% include "nav.html" %}
+      <div class="table">
+         <table>
+            <tr>
+               <th> Player </th>
+               <th> Runs </th>
+            </tr>
+            {% block content %}
+            {% for i  in runs %}
+            <tr>
+               <td>{{i[0]}}</td>
+               <td>{{i[1]}}</td>
+            </tr>
+            {% endfor %}
+            {% endblock %}
+         </table>
+      </div>
+   </body>
+</html>
